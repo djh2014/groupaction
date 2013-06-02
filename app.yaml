@@ -1,0 +1,52 @@
+application: group-action
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+- url: /
+  static_files: index.html
+  upload: index.html
+
+- url: /admin
+  static_files: admin.html
+  upload: admin.html
+
+- url: /about
+  static_files: about.html
+  upload: about.html
+
+
+- url: /css
+  static_dir: css
+
+- url: /style
+  static_dir: style
+
+
+- url: /img
+  static_dir: img
+
+- url: /js
+  static_dir: js
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: /favicon.ico
+
+
+
+- url: /js
+  static_dir: js
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: "2.5.2"
